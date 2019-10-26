@@ -28,7 +28,7 @@ public class QuartzManager {
      * @throws SchedulerException
      */
     public static void addJob(String jobName, String jobGroupName, String triggerName,
-                              String triggerGroupName, Class jobClass, int interval,
+                              String triggerGroupName, Class<? extends Job> jobClass, int interval,
                               Object...objects) throws SchedulerException {
 
         JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(jobName, jobGroupName)
